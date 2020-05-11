@@ -11,9 +11,15 @@
 |
 */
 
+use App\Http\Controllers\PeliculaController;
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get('/peliculas/{pagina?}', 'PeliculaController@index');
 
 /**
  * METODOS HTTP
@@ -22,14 +28,15 @@ Route::get('/', function () {
  * PUT: Actualizar recursos
  * DELETE: Eliminar recursos
  */
-
+/*
 Route::get('/mostrar-fecha', function(){
     $titulo = "Estoy mostrando la fecha";
      return view('mostrar-fecha',array(
          'titulo' => $titulo
      ));
 });
-
+*/
+/*
 Route::get('/pelicula/{titulo}/{year?}', function($titulo = 'No hay una pelicula seleccionada', $year = 2019){
 	return view('pelicula', array(
 		'titulo' => $titulo,
@@ -56,3 +63,5 @@ Route::get('pagina-generica', function () {
     return view('pagina');
 
 });
+*/
+
