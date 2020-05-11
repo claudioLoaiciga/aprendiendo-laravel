@@ -21,6 +21,13 @@ Route::get('/', function () {
 
 Route::get('/peliculas/{pagina?}', 'PeliculaController@index');
 
+Route::get('/detalle', [
+   'uses' => 'PeliculaController@detalle',
+   'as' => 'detalle.pelicula'
+    ]);
+
+Route::resource('usuario', 'UsuariosController');
+
 /**
  * METODOS HTTP
  * GET: Capturar datos
