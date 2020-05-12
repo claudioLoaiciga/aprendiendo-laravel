@@ -2,6 +2,11 @@
 
 <ul>
     @foreach ($frutas as $fruta)
-        <li>{{$fruta->nombre}}</li>
+
+        <li>
+            <a href="{{action('frutaController@detail',['id'=>$fruta->id])}}">
+            {{$fruta->nombre}}
+            </a>
+        </li>
     @endforeach
 </ul>
