@@ -1,17 +1,25 @@
-<h1>Crear una fruta</h1>
-<form action="{{action('frutaController@save')}}" method="POST">
+@if(isset($fruta) && is_object($fruta))
+	<h1>Editar fruta</h1>
+@else
+	<h1>Crear una fruta</h1>
+@endif
+
+<form action="{{ isset($fruta) ? action('frutaController@update') : action('frutaController@save') }}" method="POST">
     {{ csrf_field() }}
-    <label for="nombre">nombre</label>
-    <input type="text" name="nombre">
-    <br/>
-    <br/>
-    <label for="descripcion">descripcion</label>
-    <input type="text" name="descripcion">
-    <br/>
-    <br/>
-    <label for="precio">precio</label>
-    <input type="numbergiy" name="precio">
-    <br/>
-    <br/>
-    <input type="submit" value="Guardar">
+
+
+	@if(isset($fruta) && is_object($fruta))
+    <input type="hidden" name="id" value="{{ $fruta->id }}"/>
+    @endif
+
+	<label for="nombre">Nombre</label>
+	<input type="text" name="nombre" value="{{ $fruta->nombre or ''}}"/><br/>
+
+	<label for="descripcion">Descripción</label>
+	<input type="text" name="descripcion" value="{{ $fruta->descripcion or ''}}"/><br/>
+
+	<label for="precio">Precio</label>
+	<input type="number" name="precio" value="{{ $fruta->precio or 0}}"/><br/>
+
+	<input type="submit" value="Guardar" />
 </form>
