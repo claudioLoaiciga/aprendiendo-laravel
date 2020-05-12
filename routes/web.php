@@ -44,6 +44,7 @@ Route::group(['prefix' => 'frutas'], function () {
     Route::get('detail/{id}','frutaController@detail');
     Route::get('crear','frutaController@create');
     Route::post('save','frutaController@save');
+    Route::get('delete/{id}','frutaController@delete');
 });
 
 /**

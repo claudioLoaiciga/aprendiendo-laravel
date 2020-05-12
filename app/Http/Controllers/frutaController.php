@@ -36,6 +36,12 @@ class frutaController extends Controller
 			'fecha' => date('Y-m-d')
 		));
 
-		return redirect()->action('frutaController@index');
+		return redirect()->action('frutaController@index')->with('status','Fruta creada correctamente');
+    }
+
+    public function delete($id){
+        $fruta = DB::table('frutas')->where('id',$id)->delete();
+        return redirect()->action('frutaController@index')->with('status','Fruta borrada correctamente');
+
     }
 }

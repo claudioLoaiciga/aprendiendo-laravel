@@ -2,3 +2,5 @@
 <p>
     {{$fruta->descripcion}}
 </p>
+<a href="{{ action('frutaController@delete', ['id' => $fruta->id]) }}">Eliminar</a>
+<a href="">Actualizar</a>
