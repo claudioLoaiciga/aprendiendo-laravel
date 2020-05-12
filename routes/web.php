@@ -37,6 +37,12 @@ Route::post('/recibir', 'PeliculaController@recibir');
 
 Route::resource('usuario', 'UsuariosController');
 
+//rutas de frutas
+
+Route::group(['prefix' => 'frutas'], function () {
+    Route::get('index','frutaController@index');
+});
+
 /**
  * METODOS HTTP
  * GET: Capturar datos
