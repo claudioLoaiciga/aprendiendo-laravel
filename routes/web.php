@@ -41,6 +41,7 @@ Route::resource('usuario', 'UsuariosController');
 
 Route::group(['prefix' => 'frutas'], function () {
     Route::get('index','frutaController@index');
+    Route::get('detail/{id}','frutaController@detail');
 });
 
 /**
